@@ -19,11 +19,11 @@ variable "sub-network-attach-id" {
 }
 
 ########## transit gateway attachment of others accounts
-variable "tgw-attach-testing-id" {
-    description = "ID of transit gateway attachment of testing account"
-    type = string
-}
-variable "tgw-attach-edge-id" {
-    description = "ID of transit gateway attachment of edge account"
-    type = string
-}
+# variable "tgw-attach-testing-id" {
+#     description = "ID of transit gateway attachment of testing account"
+#     type = string
+# }
+# variable "tgw-attach-edge-id" {
+#     description = "ID of transit gateway attachment of edge account"
+#     type = string
+# }

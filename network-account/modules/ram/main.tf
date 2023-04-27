@@ -11,7 +11,8 @@ resource "aws_ram_resource_share" "ram-1" {
 
 # associate the transit gateway ressource with the share
 resource "aws_ram_resource_association" "transit-ram" {
-  resource_arn       = var.transit-arn
+  count = length(var.LIST_ARN)
+  resource_arn       = var.LIST_ARN[count.index]
   resource_share_arn = aws_ram_resource_share.ram-1.arn
 }
 

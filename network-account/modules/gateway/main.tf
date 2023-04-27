@@ -83,6 +83,10 @@ resource "aws_route_table" "private-route-1" {
     cidr_block = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat-1.id
   }
+  route {
+    cidr_block = var.testing-vpc-cidr-block
+    transit_gateway_id = var.transit-gateway-id
+  }
 
   tags = {
     Name = "Tab-sub-priv-1"
@@ -122,6 +126,10 @@ resource "aws_route_table" "private-route-2" {
     cidr_block = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat-2.id
   }
+  route {
+    cidr_block = var.testing-vpc-cidr-block
+    transit_gateway_id = var.transit-gateway-id
+  }
 
   tags = {
     Name = "Tab-sub-priv-2"
@@ -160,6 +168,10 @@ resource "aws_route_table" "private-route-3" {
   route {
     cidr_block = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat-3.id
+  }
+  route {
+    cidr_block = var.testing-vpc-cidr-block
+    transit_gateway_id = var.transit-gateway-id
   }
 
   tags = {

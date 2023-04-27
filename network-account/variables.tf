@@ -2,7 +2,7 @@
 variable "profile-name" {
     description = "local aws profile name"
     type = string
-    default = "cno-sso"
+    default = "jospin-root"
 }
 # variable "flow-log-bucket" {
 #     description = "bucket of all flow log in Log Archive account"
@@ -85,7 +85,7 @@ variable "testing-vpc-cidr-block" {
 variable "testing-account-id" {
     description = "the ID of aws testing account that we want to associate"
     type = string
-    default = "182862085962"
+    default = "122916728272"
 }
 
 ########## transit gateway attachment of different account
@@ -93,7 +93,7 @@ variable "testing-account-id" {
 variable "tgw-attach-testing-id" {
     description = "ID of transit gateway attachment of testing account"
     type = string
-    default = "tgw-attach-0e8b9a9d4d8416277"
+    default = ""
 }
 
 # variable "tgw-attach-edge-id" {

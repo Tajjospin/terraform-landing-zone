@@ -28,11 +28,11 @@ output "tgw-TESTING-route" {
     value = aws_ec2_transit_gateway_route_table.tgw-TESTING-route-table.id
   
 }
-output "tgw-Edge-route" {
-    description = "ID of transit gateway routing table to network and shared accounts"
-    value = aws_ec2_transit_gateway_route_table.tgw-Edge-route-table.id
+# output "tgw-Edge-route" {
+#     description = "ID of transit gateway routing table to network and shared accounts"
+#     value = aws_ec2_transit_gateway_route_table.tgw-Edge-route-table.id
   
-}
+# }
 # output "flow-log-transit" {
 #     description = "the flow logs of transit gateway"
 #     value = aws_flow_log.flow-logs.id

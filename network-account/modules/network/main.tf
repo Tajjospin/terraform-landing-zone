@@ -76,24 +76,24 @@ resource "aws_subnet" "sub-pub-3" {
 }
 
 
-# creation of vpc flow logs
-resource "aws_flow_log" "vpc-flow-logs" {
-# specify the ARN of logs bucket in Logs Archive account
-  # log_destination      = var.flow-log-bucket
-  # log_destination      = "arn:aws:s3:::jospin-bucket-de-log/network-vpcflowlogs/"
-  log_destination      = "arn:aws:s3:::jospin-bucket-de-log/network-vpc-flowlogs"
-  log_destination_type = "s3"
-  traffic_type         = "ALL"
-  vpc_id               = aws_vpc.main.id
-  destination_options {
-    file_format        = "parquet"
-    per_hour_partition = true
-  }
-  depends_on = [
-    aws_vpc.main
-  ]
+## creation of vpc flow logs
+# resource "aws_flow_log" "vpc-flow-logs" {
+# # specify the ARN of logs bucket in Logs Archive account
+#   # log_destination      = var.flow-log-bucket
+#   # log_destination      = "arn:aws:s3:::jospin-bucket-de-log/network-vpcflowlogs/"
+#   log_destination      = "arn:aws:s3:::jospin-bucket-de-log/network-vpc-flowlogs"
+#   log_destination_type = "s3"
+#   traffic_type         = "ALL"
+#   vpc_id               = aws_vpc.main.id
+#   destination_options {
+#     file_format        = "parquet"
+#     per_hour_partition = true
+#   }
+#   depends_on = [
+#     aws_vpc.main
+#   ]
   
-  tags = {
-    "Name" = "flow-log-hub-network"
-  }
-}
+#   tags = {
+#     "Name" = "flow-log-hub-network"
+#   }
+# }

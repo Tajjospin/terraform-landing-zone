@@ -49,11 +49,11 @@ output "tgw-TESTING-route" {
     value = module.transit.tgw-TESTING-route
   
 }
-output "tgw-Edge-route" {
-    description = "ID of transit gateway routing table to network and shared accounts"
-    value = module.transit.tgw-Edge-route
+# output "tgw-Edge-route" {
+#     description = "ID of transit gateway routing table to network and shared accounts"
+#     value = module.transit.tgw-Edge-route
   
-}
+# }
 # output "flow-log-transit" {
 #     description = "the flow logs of transit gateway"
 #     value = module.transit.flow-log-transit

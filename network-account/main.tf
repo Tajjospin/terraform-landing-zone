@@ -27,13 +27,12 @@ module "transit" {
         module.network.priv-subnet-2-id,
         module.network.priv-subnet-3-id
     ]
-    tgw-attach-testing-id = var.tgw-attach-testing-id
+    # tgw-attach-testing-id = var.tgw-attach-testing-id
     # tgw-attach-edge-id = var.tgw-attach-edge-id
     # flow-log-bucket = var.flow-log-bucket
 
     depends_on = [
-      module.network,
-      module.gateway
+      module.network
     ]
   
 }
@@ -41,7 +40,12 @@ module "transit" {
 module "RAM" {
   source = "./modules/ram"
   testing-account-id = var.testing-account-id
-  transit-arn = module.transit.tgw-arn
+  # transit-arn = module.transit.tgw-arn
+  LIST_ARN = [
+        module.transit.tgw-arn, 
+        module.network.pub-subnet-1-arn,
+        module.network.pub-subnet-2-arn,
+        module.network.pub-subnet-3-arn]
 
   depends_on = [
     module.transit
